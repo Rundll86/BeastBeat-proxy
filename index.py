@@ -1,13 +1,15 @@
-from engine.config import PROXY_PORT
-from engine.hosts import setup_hosts
-from engine.server import app
+import os
+import sys
+import __main__
 
-setup_hosts()
-app.run(
-    "0.0.0.0",
-    port=PROXY_PORT,
-    ssl_context=(
-        "www.patreon.com+1.pem",
-        "www.patreon.com+1-key.pem",
-    ),
+from engine import hosts, certificate, server
+
+print(
+    os.path.abspath(sys.argv[0]),
+    os.path.dirname(os.path.abspath(sys.argv[0])),
+    __main__.__file__,
 )
+if False:
+    hosts.setup()
+    certificate.setup()
+    server.start()

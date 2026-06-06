@@ -4,7 +4,9 @@ from flask import Flask, request
 import requests
 import time
 
+from engine.config import PROXY_PORT
 from engine.constants import CURRENT_USER, JOKE
+from engine.dir import use_base
 
 app = Flask(__name__)
 
@@ -39,3 +41,14 @@ def token():
 @app.route("/api/oauth2/api/current_user")
 def current_user():
     return json.dumps(CURRENT_USER, ensure_ascii=False)
+
+
+def start():
+    app.run(
+        "0.0.0.0",
+        port=PROXY_PORT,
+        ssl_context=(
+            use_base("cert.pem"),
+            use_base("key.pem"),
+        ),
+    )
