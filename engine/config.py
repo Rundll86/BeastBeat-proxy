@@ -1,2 +1,2 @@
-PROXY_PORT = 8081
+PROXY_PORT = 443
 BASE_URL = "www.patreon.com"
