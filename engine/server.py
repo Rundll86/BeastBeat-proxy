@@ -21,7 +21,7 @@ def root():
             "state": "None",
         },
     )
-    return "授权完成！！！"
+    return "登录成功，返回BeastBeat窗口既可。"
 
 
 @app.route("/api/oauth2/token", methods=["post"])
