@@ -3,12 +3,12 @@ import json
 from flask import Flask, request
 import requests
 import time
-
+from rich import print
 from engine.config import PROXY_PORT
 from engine.constants import CURRENT_USER, JOKE
 from engine.dir import use_base
 
-app = Flask(__name__)
+app = Flask("BeastBeat Verifier")
 
 
 @app.route("/oauth2/authorize")
@@ -44,6 +44,10 @@ def current_user():
 
 
 def start():
+    print(
+        "[white bold]服务器已启动！打开BeastBeat画廊后点击[green] [Verify On Patreon] [/green]即可自动登录。[/white bold]"
+    )
+    print("-" * 10 + "\n")
     app.run(
         "0.0.0.0",
         port=PROXY_PORT,

@@ -1,5 +1,5 @@
-JOKE = "HaJiMiNanBeiLvDou"
-SHORTER_JOKE = "dingdongji"
+JOKE = "Ha-Ji-Mi-Nan-Bei-Lv-Dou"
+SHORTER_JOKE = "ding-dong-ji"
 
 OLD_TIME = "2024-01-01T01:00:00.000+00:00"
 NEW_TIME = "2026-01-01T01:00:00.000+00:00"

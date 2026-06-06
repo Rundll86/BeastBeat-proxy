@@ -2,10 +2,10 @@
 
 
 a = Analysis(
-    ['index.py'],
+    ["index.py"],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[("cert.pem", "."), ("key.pem", ".")],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -22,7 +22,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='index',
+    name="beastbeat-verifier",
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -35,4 +35,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon="favicon.ico",
 )
