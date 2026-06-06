@@ -1,5 +1,5 @@
-JOKE = "NiHaoBeastBeat"
-SHORTER_JOKE = "nhbb"
+JOKE = "HaJiMiNanBeiLvDou"
+SHORTER_JOKE = "dingdongji"
 USER_ID = 123456
 CURRENT_USER = {
     "data": {

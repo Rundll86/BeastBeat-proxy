@@ -4,7 +4,7 @@ from flask import Flask, request
 import requests
 import time
 
-from engine.constants import CURRENT_USER
+from engine.constants import CURRENT_USER, JOKE
 
 app = Flask(__name__)
 
@@ -15,7 +15,7 @@ def root():
     requests.get(
         request.args["redirect_uri"],
         params={
-            "code": "NiHaoBeastBeat",
+            "code": JOKE,
             "state": "None",
         },
     )
@@ -26,10 +26,10 @@ def root():
 def token():
     return json.dumps(
         {
-            "access_token": "NiHaoBeastBeat",
+            "access_token": JOKE,
             "token_type": "Bearer",
             "expires_in": 3600,
-            "refresh_token": "NiHaoBeastBeat",
+            "refresh_token": JOKE,
             "scope": "read write",
         },
         ensure_ascii=False,
