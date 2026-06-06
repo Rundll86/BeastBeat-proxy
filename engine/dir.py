@@ -1,7 +1,7 @@
 import os
+import __main__
 
-
-base_dir = os.path.dirname(__file__)
+base_dir = os.path.dirname(__main__.__file__)
 
 
 def use_base(fp: str):
