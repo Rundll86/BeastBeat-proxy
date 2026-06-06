@@ -3,9 +3,9 @@ from engine.config import BASE_URL
 
 HOSTS_ENTRY = "\n".join(
     [
-        "# beastbeat-start",
+        "# patreon-proxy-start",
         f"127.0.0.1 {BASE_URL}",
-        "# beastbeat-end",
+        "# patreon-proxy-end",
     ]
 )
 HOSTS_PATH = "C:/Windows/System32/drivers/etc/hosts"

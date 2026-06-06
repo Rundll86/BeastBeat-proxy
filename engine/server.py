@@ -3,7 +3,6 @@ import json
 from flask import Flask, request
 import requests
 import time
-from rich import print
 from engine.config import PROXY_PORT
 from engine.constants import CURRENT_USER, JOKE
 from engine.dir import use_base
@@ -21,7 +20,7 @@ def root():
             "state": "None",
         },
     )
-    return "登录成功，返回BeastBeat窗口即可。"
+    return "登录成功，返回游戏窗口即可。"
 
 
 @app.route("/api/oauth2/token", methods=["post"])
@@ -44,9 +43,7 @@ def current_user():
 
 
 def start():
-    print(
-        "[white bold]服务器已启动！打开BeastBeat画廊后点击[green] [Verify On Patreon] [/green]即可自动登录。[/white bold]"
-    )
+    print("服务器已启动！启动游戏点击 [Verify On Patreon] 即可自动登录。")
     print("-" * 10 + "\n")
     app.run(
         "0.0.0.0",

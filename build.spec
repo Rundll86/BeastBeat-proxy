@@ -22,7 +22,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name="beastbeat-verifier",
+    name="patreon-verifier-beastbeat",
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
