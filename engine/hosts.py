@@ -1,12 +1,15 @@
 from engine.config import BASE_URLS
 
 
-HOSTS_ENTRY = "\n".join(
-    [
-        "# patreon-proxy-start",
-        *[f"127.0.0.1 {url}" for url in BASE_URLS],
-        "# patreon-proxy-end",
-    ]
+HOSTS_ENTRY = (
+    "\n".join(
+        [
+            "# patreon-proxy-start",
+            *[f"127.0.0.1 {url}" for url in BASE_URLS],
+            "# patreon-proxy-end",
+        ]
+    )
+    + "\n"
 )
 HOSTS_PATH = "C:/Windows/System32/drivers/etc/hosts"
 
