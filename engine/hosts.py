@@ -1,10 +1,10 @@
-from engine.config import BASE_URL
+from engine.config import BASE_URLS
 
 
 HOSTS_ENTRY = "\n".join(
     [
         "# patreon-proxy-start",
-        f"127.0.0.1 {BASE_URL}",
+        *[f"127.0.0.1 {url}" for url in BASE_URLS],
         "# patreon-proxy-end",
     ]
 )

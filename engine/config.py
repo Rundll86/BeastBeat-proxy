@@ -1,2 +1,6 @@
 PROXY_PORT = 443
-BASE_URL = "www.patreon.com"
+BASE_URLS = [
+    "api.patreon.com",
+    "www.patreon.com",
+    "patreon.com",
+]
