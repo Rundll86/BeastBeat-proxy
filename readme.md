@@ -1,10 +1,10 @@
-# BeastBeat Proxy
+# Patreon Proxy
 
 > Readme written by GPT-4o
 
 ## 概述
 
-`BeastBeat-proxy` 是一个针对 Windows 环境的本地 HTTPS 代理/服务，模拟 Patreon OAuth2 登录流程并返回伪造的认证数据。该项目主要用于绕过 Patreon 登录验证，以便让 BeastBeat 游戏/应用在不进行真实 Patreon 授权的情况下获取“已登录”状态。
+`patreon-proxy` 是一个针对 Windows 环境的本地 HTTPS 代理/服务，模拟 Patreon OAuth2 登录流程并返回伪造的认证数据。该项目主要用于绕过 Patreon 登录验证，以便让 **依赖Patreon登录验证的** 游戏/应用在不进行真实 Patreon 授权的情况下获取“已登录”状态。
 
 ## 主要功能
 
@@ -31,7 +31,7 @@
    - `certificate.setup()`：通过 `certutil` 将项目目录中的 `cert.pem` 安装到当前用户的受信任根证书
    - `server.start()`：启动 HTTPS Flask 服务，监听 `0.0.0.0:443`
 
-2. 当 BeastBeat 客户端访问 `https://www.patreon.com/oauth2/authorize` 时，服务器会：
+2. 当 **依赖Patreon登录验证的** 客户端访问 `https://www.patreon.com/oauth2/authorize` 时，服务器会：
    - 模拟授权回调，向客户端指定的 `redirect_uri` 返回一个固定 `code`
 
 3. 当客户端请求 `https://www.patreon.com/api/oauth2/token` 时，服务器返回固定的访问令牌响应。
@@ -52,12 +52,11 @@
 - Python 3.x
 - Flask
 - requests
-- rich
 - pyinstaller（仅用于打包）
 
 安装依赖：
 
-```powershell
+```bash
 pip install -r requirements.txt
 ```
 
@@ -65,7 +64,7 @@ pip install -r requirements.txt
 
 以管理员身份运行 Python 脚本，确保能够写入 `hosts` 文件并执行 `certutil`：
 
-```powershell
+```bash
 python index.py
 ```
 
@@ -78,7 +77,7 @@ python index.py
 
 ## 使用场景
 
-适用于需要绕过 Patreon OAuth2 验证、并在本地模拟 Patreon 登录状态的场景。通常与 BeastBeat 游戏/应用配合使用，通过伪造 Patreon 授权数据实现自动登录。
+适用于需要绕过 Patreon OAuth2 验证、并在本地模拟 Patreon 登录状态的场景。通常与 **依赖Patreon登录验证的** 游戏/应用配合使用，通过伪造 Patreon 授权数据实现自动登录。
 
 ## 免责声明
 
